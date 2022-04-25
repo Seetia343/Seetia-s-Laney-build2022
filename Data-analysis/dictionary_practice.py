@@ -1,10 +1,15 @@
-#Chicken = 1.59
-#Beef = 1.99
-#Cheese = 1.00
-#Milk =2.50
+'''''
+Chicken = 1.59
+Beef = 1.99
+Cheese = 1.00
+Milk =2.50
+'''
 
 #Step 2
+'''
+from locale import delocalize
 from turtle import Shape
+'''
 
 
 Food = {"Chicken" :1.59, "Beef":1.99, "Cheese":1.00, "Milk":2.50 } #food dictionary
@@ -45,5 +50,8 @@ Anime ["One piece"] =10
 #step VIII
 My_Shoes ={"Nike":6, "Foamposite":1, "Air_max":1, "SB_dunk":1 , "Vans":2 }
 My_Shoes ["Vans"] =1
-print(My_Shoes)
-
+##print(Shoes)
+del Anime["One Piece"]
+del Food ["Chicken"]
+del Shoes ["SB_dunk"]
+del Anime ["Bleacj"]

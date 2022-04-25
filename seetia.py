@@ -1,3 +1,4 @@
+'''
 print("Hello world")
 
 name = "Seetia"  #String
@@ -18,3 +19,4 @@ print(plays_baskteball)
 print(jersey_number)
 
 print(my_first_name)
+'''
