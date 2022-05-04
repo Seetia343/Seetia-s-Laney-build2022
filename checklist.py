@@ -58,14 +58,13 @@ def select(function_code):
     running = True
     
     return running
-
-    elif function_code == "U" :
+elif function_code == "U" :
         input_index = input("Enter the index position you are trying to update in the list: ")
-    input_item =input("Enter the element you are tryingto update to the list:")
-    update(int(input_index), input_item)
-    running = True
+        input_item =input("Enter the element you are tryingto update to the list:")
+        update(int(input_index), input_item)
+        running = True
 
-    return running
+        return running 
 
     while running:
         selection = user_input(
