@@ -36,17 +36,12 @@ def list_all_items():
     for item in checklist:
         print(item)
 
-def user_input(prompt):
-    # Get user input here
-    input_item = input(prompt) 
-
-    return input_item
-
 def select(function_code):
     # User Selection Code here
+
     # Create item example
     if function_code == "C":
-        input_item = user_input("What would you like to add to the list: ")
+        input_item = input("What would you like to add to the list: ")
         create(input_item)
         running = True
 
@@ -54,19 +49,25 @@ def select(function_code):
 
     elif function_code =="R" :
         input_item = input("Enter the index position you are trying to access in the list:")
-    read(int(input_item))
-    running = True
+        read(int(input_item))
+        running = True
     
-    return running
-elif function_code == "U" :
-        input_index = input("Enter the index position you are trying to update in the list: ")
-        input_item =input("Enter the element you are tryingto update to the list:")
+        return running
+    
+    elif function_code == "U" :
+        input_index = input("Enter the index position you are trying to update in the list:")
+        input_item = input("Enter the element you are trying to update to the list:")
         update(int(input_index), input_item)
         running = True
 
         return running 
 
-    while running:
-        selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, and Q to quit: ").upper()
-        running = select(selection)
+    elif function_code == "D":
+        imput_index = input("Enter the index position of the element you want to delete:")
+
+running = True
+
+while running:
+    selection = input(
+           "Press C to add to list, R to Read from list, U to update list , D to delete from the list, A to displaylist  and Q to quit: ").upper()
+    running = select(selection)
