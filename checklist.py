@@ -64,8 +64,12 @@ def select(function_code):
 
     elif function_code == "D":
         imput_index = input("Enter the index position of the element you want to delete:")
+        destroy(int(input_index))
+        running = True
 
-running = True
+        return running
+
+running = True  
 
 while running:
     selection = input(
