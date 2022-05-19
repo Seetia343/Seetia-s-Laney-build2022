@@ -20,7 +20,7 @@ def read(index):
 
 def update(index, item):
     # Update code here
-    checklist[index] = item 
+    checklist[index] = f"[ ] {item}" 
 
 def destroy(index):
     # Destroy code here -- you could also use list.pop(index)
@@ -28,8 +28,18 @@ def destroy(index):
 
 def mark_completed(index):
     # Add code here that marks an item as completed
-    if checklist[index][1] == " ":
-        checklist[index][1] = "√"
+    ''' Lets say that our checklist is (of strings) [hey, how, are, you, doing] and that our index is 2
+        checklist[2] = "are"
+        checklist[2][1] = "r"
+    '''
+    if "√" not in checklist[index]:
+        checklist[index] = f'[√] {checklist[index]}'
+
+        return print(f"{checklist[index]} was marked completed")
+        
+    else:
+        
+        return print(f"That item was marked completed already")
 
 def list_all_items():
     # List all items code here
@@ -45,7 +55,7 @@ def select(function_code):
         create(input_item)
         running = True
 
-        return True
+        return running
 
     elif function_code =="R" :
         input_item = input("Enter the index position you are trying to access in the list:")
@@ -63,8 +73,26 @@ def select(function_code):
         return running 
 
     elif function_code == "D":
-        imput_index = input("Enter the index position of the element you want to delete:")
+        input_index = input("Enter the index position of the element you want to delete:")
         destroy(int(input_index))
+        running = True
+
+        return running
+
+    elif function_code =="L":
+        list_all_items()
+        running = True
+    
+        return running
+
+    elif function_code =="Q":
+        running = False
+
+        return running
+   
+    elif function_code =="M":
+        input_index = input("Enter the index position you are trying to mark complete:")
+        mark_completed(int(input_index))
         running = True
 
         return running
@@ -73,5 +101,5 @@ running = True
 
 while running:
     selection = input(
-           "Press C to add to list, R to Read from list, U to update list , D to delete from the list, A to displaylist  and Q to quit: ").upper()
+           "Press C to add to list, R to Read from list, U to update list , D to delete from the list, L to displaylist,M for mark completed   and Q to quit: ").upper()
     running = select(selection)
