@@ -5,42 +5,76 @@ a class = the blueprint/outline -- this the thing that all our objects are creat
 
 import random
 
+from pyparsing import Empty
+
+
 # hero.py
 
 class Hero:
-  '''We want our hero to have a default "starting_health",
-  so we can set that in the function header.
+  # We want our hero to have a default "starting_health", so we can set that in the function header.
  
-    any class that you create will consist of two parts: you willhave a constructo/ initializer and then you have methods
-
-    there are two important things to take away from the constructor: the first is that you will allow creat your 
-    attribute withing the constructor -- attrivutes are the descriptive things about an object or nouns in the simpes term,
-    the second is the self parameter
-  '''
+  def __init__(self, name = "hero", starting_health=1000,):
+    #Instance properties: name: String, starting_health: Integer current_health: Integer
+        self.name = name
+        self.starting_health = starting_health
+        self.current_health = starting_health
+        self.armors =[]
+        self.ability = []
+        self.death =0
+        self.kills = 0
   
-  def __init__(self, name = "Seetia", starting_health=100,):
-    '''Instance properties:
-      name: String
-      starting_health: Integer
-      current_health: Integer
-    '''
-   # we know the name of our hero, so we assign it here
-    self.name = name
-    # similarly, our starting health is passed in, just like name
-    self.starting_health = starting_health
-    # when a hero is created, their current health is
-    # always the same as their starting health (no damage taken yet!)
-    self.current_health = starting_health
+  def _repr_(self):
+    return f"Hero({self.name})" 
+
+  def add_armors(self, *args):
+    new_armors = 0
+
+    for armor in args:
+
+      if armor not in self.armors:
+        new_armors += 1
+        self.armors.append(armor)
+
+      if new_armors == 1:
+        self.armors.append(armor)
+
+    if new_armors == 1:
+      message = f'{self.name} equipped a new piece of armor '
+    
+    #else:
+
+  def add_abiility(self, ability):
+    self.ability.append(ability)
+    return self.ability
+
+  def attack(self):
+    attack_value = 0
+    for ability in self.ability:
    
-    def battle(self, opponent):
+  def battle(self, opponent):
+    heroes_names = []
+
+    heroes_names.append(self.name)
+    heroes_names.append(opponent.name)
+
+    winner = random.choice (heroes_names)
+    loser = []
+
+    for hero in heroes_names:
+      if hero != winner:
+        loser.append ()
+
+    print(f'{}winner has defeated{loser} ')
+
+    return winner 
+
+  
 
 if __name__ == "__main__":
-  # If you run this file from the terminal
-  # this block is executed.
-  my_hero = Hero("Seetia", 200)
-  print(my_hero.name)
-  print(my_hero.current_health)
-    
 
-#  Super_Seetia = Hero("Seetia", 500)
- # print(Super_Seetia.starting_health)
+  hero1 = Hero("Jesus")
+  hero2 = Hero("Doodlestain")
+
+  hero1.battle(hero2)
+
+  ability1 = Ability ("super fast", 100)
