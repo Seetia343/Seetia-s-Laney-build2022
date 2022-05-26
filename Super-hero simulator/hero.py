@@ -20,7 +20,7 @@ class Hero:
         self.current_health = starting_health
         self.armors =[]
         self.ability = []
-        self.death =0
+        self.deaths =0
         self.kills = 0
   
   def _repr_(self):
@@ -50,7 +50,32 @@ class Hero:
   def attack(self):
     attack_value = 0
     for ability in self.ability:
+      attack_value+= ability.attack()
+      return attack_value
+ 
+  def defend(self):
+    defend_value = 0
+    for armor in self.armor:
+      defend_value += armor.defend()
+
+    return defend_value
+    
+  def create_hero(self, num):
+
+    hero_name =input (f"\nHero #{num +1}'s name:")
+    hero_health = input(f"{hero_name}'s health()Enter a number , try 1000 for default value): ")
+    
+
+  
+  def add_armor(self,armor):
+    self.armor.append(armor)
+    return self.armor
    
+  def take_damage(self, taking_damage):
+    damage = taking_damage - self.defend()
+    if damage >0:
+      self.current_health -= damage
+
   def battle(self, opponent):
     heroes_names = []
 
@@ -77,4 +102,4 @@ if __name__ == "__main__":
 
   hero1.battle(hero2)
 
-  ability1 = Ability ("super fast", 100)
+  ability1 = ability("super fast", 100)
