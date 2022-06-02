@@ -22,6 +22,7 @@ class Hero:
         self.ability = []
         self.deaths =0
         self.kills = 0
+        self.weapons = []
   
   def _repr_(self):
     return f"Hero({self.name})" 
@@ -39,7 +40,7 @@ class Hero:
         self.armors.append(armor)
 
     if new_armors == 1:
-      message = f'{self.name} equipped a new piece of armor '
+      message = (f'{self.name} equipped a new piece of armor ')
     
     #else:
 
@@ -51,15 +52,17 @@ class Hero:
     attack_value = 0
     for ability in self.ability:
       attack_value+= ability.attack()
-      return attack_value
+    print(f"{self.name} hasb {attack_value} attack")
+    return attack_value
  
   def defend(self):
     defend_value = 0
     for armor in self.armor:
       defend_value += armor.defend()
 
+    print(f"{self.name} has {defend_value} defense")
     return defend_value
-    
+
   def create_hero(self, num):
 
     hero_name =input (f"\nHero #{num +1}'s name:")
@@ -75,6 +78,10 @@ class Hero:
     damage = taking_damage - self.defend()
     if damage >0:
       self.current_health -= damage
+  
+  def add_weapons(self, weapon_damage);
+    self.weapons.append(weapon_damage) 
+    print(f"{self.nane} weapom has{self.weapons}")
 
   def battle(self, opponent):
     heroes_names = []
