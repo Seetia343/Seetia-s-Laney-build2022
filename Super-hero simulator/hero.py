@@ -79,7 +79,7 @@ class Hero:
     if damage >0:
       self.current_health -= damage
   
-  def add_weapons(self, weapon_damage);
+  def add_weapons(self, weapon_damage):
     self.weapons.append(weapon_damage) 
     print(f"{self.nane} weapom has{self.weapons}")
 
@@ -96,7 +96,7 @@ class Hero:
       if hero != winner:
         loser.append ()
 
-    print(f'{}winner has defeated{loser} ')
+    print(f'{winner}winner has defeated{loser} ')
 
     return winner 
 

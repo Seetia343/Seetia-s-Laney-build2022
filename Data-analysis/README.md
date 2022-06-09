@@ -1,21 +1,7 @@
-This was out curiosity but at the same time i chose because i do work in retail so we do get this issue from time to time. Personally when i get put in that situation i don't feek comfortabe so what i do is just ask for assistance or just transfer my transaction to someone else if they are comfortable with it. Would you be comfortable in that situation?
+# About this data ...
+This data touches upon video games sales with ratings from as early as 1984 until the year 2016. It’s broken down between a few different categories like the platform the game was on, what genre, year it was released and even the rank. It goes into slight details of the global sale and how that affected the sales in the rest  of the world.
 
- What are the reasons why people do this ?
+# Why I'm interested ...
+I have played a lot games during this past few years but I never really looked at the analytical aspect of it. I’ve also recognize a lot of the games that I have played or heard and I am curious to see on how they did globally.
 
- Does it have to do with anything there financial status?4
-
- Why can't just get a job?
-
- why don't they to get better after getting caught?
-
-Does issue happen often in a specific group of people?
-
-Is there correlation with there lifestyle?
-
-Does this issue online occur in retail?
-
-Is there anything that can be done to prevent this?
-
-How do people that work in retail feel when put in this situation?
-
-is there system out that stop during transactions?
+# Ten Questions
